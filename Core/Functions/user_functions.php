@@ -98,7 +98,7 @@
 		mysql_query("INSERT INTO `users` ($fields) VALUES ($data)") ;
 		$to = $registration_data['email'] ;
 		$subject = 'Account activation' ;
-		$body = "Hello " . $registration_data['user_first_name'] . " " . $registration_data['user_last_name'] . ",\n\nYou need to activate your account by either clicking on this link or copying and pasting this link in another tab\n\nhttp://localhost/Project_Site/Pages/activate.php?email=" . $registration_data['user_email'] . "&email_code=" . $registration_data['user_email_code'] . "\n\n-ISTE" ;
+		$body = "Hello " . $registration_data['user_first_name'] . " " . $registration_data['user_last_name'] . ",\n\nYou need to activate your account by either clicking on this link or copying and pasting this link in another tab\n\nhttp://localhost/Project_Site_Back_End/Pages/activate.php?email=" . $registration_data['user_email'] . "&email_code=" . $registration_data['user_email_code'] . "\n\n-ISTE" ;
 		send_email($to , $subject , $body) ;
 	}
 	function change_password($user_id , $new_password)
