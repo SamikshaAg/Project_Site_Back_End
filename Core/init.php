@@ -2,12 +2,14 @@
 	session_start() ;
 	//off for development level
 	//error_reporting(0) ;
-	//required files
-	require 'connection.php' ;
+	//necessary files
+	include 'connection.php' ;
 	require 'Functions/user_functions.php' ;
 	require 'Functions/general_functions.php' ;
+	//for finding the current file name the user is viewing
 	$current_file = explode('/' , $_SERVER['SCRIPT_NAME']) ;
 	$current_file = end($current_file) ;
+	//for getting the users's data
 	if (logged_in() === true)
 	{
 		$session_user_id = $_SESSION['user_id'] ;
@@ -24,5 +26,6 @@
 			exit() ;
 		}
 	}
+	//array for errors
 	$errors = array() ;
 ?>
